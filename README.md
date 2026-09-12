@@ -25,3 +25,22 @@ python main.py
 ## Limitations
 
 This is an early prototype, not a full retrieval-augmented generation (RAG) system. It currently has no vector database, semantic retrieval, citation grounding, document chunk ranking, or long-document context management. These would be natural extensions for larger document collections.
+
+
+## Goal
+
+The script demonstrates direct question answering over the text of one PDF and makes the limitations of a prompt-only approach visible before retrieval, chunking, and citation features are added.
+
+## Installation
+
+The repository has no dependency file. Create a small environment and install the two imported packages:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install PyPDF2 g4f
+```
+
+## Working with the Repository
+
+Set the PDF path and question in `main.py`, then run `python main.py`. Use only documents you are permitted to send to the configured model provider. Scanned PDFs require OCR before this script can extract useful text, and long documents may exceed the provider's context limit.
